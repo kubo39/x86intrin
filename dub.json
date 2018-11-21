@@ -1,0 +1,9 @@
+{
+	"description": "x86 intrinsics for LDC",
+	"license": "BSL-1.0",
+	"authors": [
+		"Hiroki Noda"
+	],
+	"copyright": "Copyright © 2018, Hiroki Noda",
+	"name": "x86intrin"
+}
