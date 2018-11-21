@@ -2,6 +2,8 @@ module x86intrin.sse2;
 
 version(LDC):
 
+static assert (__traits(targetHasFeature, "sse2"));
+
 import core.simd;
 import ldc.simd;
 

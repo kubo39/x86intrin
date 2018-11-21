@@ -2,6 +2,8 @@ module x86intrin.sse42;
 
 version(LDC):
 
+static assert (__traits(targetHasFeature, "sse4.2"));
+
 nothrow:
 @nogc:
 
