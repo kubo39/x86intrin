@@ -3,11 +3,8 @@ language: d
 d:
   - ldc
 
-env:
-  DFLAGS="-mcpu=native"
-
 script:
-  - dub build --compiler=${DC}
+  - make test
 
 notifications:
   email:
