@@ -59,45 +59,14 @@ int _mm_cmpistrz(byte16, byte16, ubyte) pure @safe;
 //   pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.#")
 //   T _mm_crc32(T)(T a, b) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.8")
-ubyte _mm_crc32_u8(ubyte, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.8")
+// ubyte _mm_crc32_u8(ubyte, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.16")
-ushort _mm_crc32_u16(ushort, ushort) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.16")
+// ushort _mm_crc32_u16(ushort, ushort) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.32")
 uint _mm_crc32_u32(uint, uint) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.64.64")
 ulong _mm_crc32_u64(ulong, ulong) pure @safe;
-
-
-unittest
-{
-    // test crc
-    {
-        assert(_mm_crc32_u8(1, 100) == 1412925310);
-        assert(_mm_crc32_u16(1, 1000) == 3870914500);
-        assert(_mm_crc32_u32(1, 50000) == 971731851);
-        assert(_mm_crc32_u64(0x000011115555AAAA, 0x88889999EEEE3333) == 0x0000000016F57621);
-    }
-
-    size_t strlenSSE42(const ubyte* top)
-    {
-        int4 im = [0xff01, 0xff01, 0xff01, 0xff01];
-        ubyte* p = cast(ubyte*) top;
-        while (!_mm_cmpistrz(cast(byte16)im, loadUnaligned!(byte16)(cast(const byte*)p), cast(byte) 0x14))
-        {
-            p += 16;
-        }
-        p += _mm_cmpistri(cast(byte16)im, loadUnaligned!(byte16)(cast(const byte*)p), cast(byte) 0x14);
-        return p - top;
-    }
-
-   {
-       auto large = cast(const ubyte*) "abcdefghijklmnopqrstuvwxyz\0".ptr;
-       assert(strlenSSE42(large) == 26);
-       auto small = cast(const ubyte*) "hoge\0".ptr;
-       assert(strlenSSE42(small) == 4);
-   }
-}
