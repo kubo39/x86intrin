@@ -7,7 +7,7 @@ env:
   DFLAGS="-mcpu=native"
 
 script:
-  - dub test --compiler=${DC}
+  - dub build --compiler=${DC}
 
 notifications:
   email:
