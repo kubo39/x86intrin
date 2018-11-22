@@ -94,10 +94,10 @@ unittest
         return p - top;
     }
 
-    {
-        auto large = cast(const ubyte*) "abcdefghijklmnopqrstuvwxyz\0".ptr;
-        assert(strlenSSE42(large) == 26);
-        auto small = cast(const ubyte*) "hoge\0".ptr;
-        assert(strlenSSE42(small) == 4);
-    }
+   {
+       auto large = cast(const ubyte*) "abcdefghijklmnopqrstuvwxyz\0".ptr;
+       assert(strlenSSE42(large) == 26);
+       auto small = cast(const ubyte*) "hoge\0".ptr;
+       assert(strlenSSE42(small) == 4);
+   }
 }
