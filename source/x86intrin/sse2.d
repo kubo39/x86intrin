@@ -9,16 +9,16 @@ import ldc.intrinsics;
 import ldc.simd;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.pmadd.wd")
-int4 _mm_pmadd_wd(byte16, byte16) pure @safe;
+int4 _mm_madd_epi16(byte16, byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.packsswb.128")
-byte16 _mm_packsswb_128(byte16, byte16) pure @safe;
+byte16 _mm_packs_epi16(byte16, byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.packssdw.128")
-byte _mm_packssdw_128(int4, int4) pure @safe;
+byte _mm_packs_epi32(int4, int4) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.packuswb.128")
-byte16 _mm_packuswb_128(byte16, byte16) pure @safe;
+byte16 _mm_packus_epi16(byte16, byte16) pure @safe;
 
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.pmovmskb.128")
@@ -26,59 +26,59 @@ int _mm_pmovmskb_128(byte16) pure @safe;
 
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psad.bw")
-long2 _mm_psad_bw(byte16, byte16) pure @safe;
+long2 _mm_sad_epu8(byte16, byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psll.w")
-short8 _mm_psll_w(short8, short8) pure @safe;
+short8 _mm_sll_epi16(short8, short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psll.d")
-int4 _mm_psll_d(int4, int4) pure @safe;
+int4 _mm_sll_epi32(int4, int4) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psll.q")
-long _mm_psll_q(long2, long2) pure @safe;
+long _mm_sll_epi64(long2, long2) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.pslli.w")
-short8 _mm_pslli_w(short8, int) pure @safe;
+short8 _mm_slli_epi16(short8, int) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.pslli.d")
-int4 _mm_pslli_d(int4, int) pure @safe;
+int4 _mm_slli_epi32(int4, int) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.pslli.q")
-long2 _mm_pslli_q(long2, int) pure @safe;
+long2 _mm_slli_epi64(long2, int) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psra.w")
-short8 _mm_psra_w(short8, short8) pure @safe;
+short8 _mm_sra_epi16(short8, short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psra.d")
-int4 _mm_psra_d(int4, int4) pure @safe;
+int4 _mm_sra_epi32(int4, int4) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrai.w")
-short _mm_psrai_w(short8, int) pure @safe;
+short _mm_srai_epi16(short8, int) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrai.d")
-int4 _mm_psrai_d(int4, int) pure @safe;
+int4 _mm_srai_epi32(int4, int) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrl.w")
-short8 _mm_psrl_w(short8, short8) pure @safe;
+short8 _mm_srl_epi16(short8, short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrl.d")
-int4 _mm_psrl_d(int4, int4) pure @safe;
+int4 _mm_srl_epi32(int4, int4) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrl.q")
-long2 _mm_psrl_q(long2, long2) pure @safe;
+long2 _mm_srl_epi64(long2, long2) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrli.w")
-short8 _mm_psrli_w(short8, int) pure @safe;
+short8 _mm_srli_epi16(short8, int) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrli.d")
-int4 _mm_psrli_d(int4, int) pure @safe;
+int4 _mm_srli_epi32(int4, int) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.psrli.q")
-long2 _mm_psrli_q(long2, int) pure @safe;
+long2 _mm_srli_epi64(long2, int) pure @safe;
 
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.maskmov.dqu")
-void _mm_maskmov_dqu(byte16, byte16, ubyte*) pure @safe;
+void _mm_maskmoveu_si128(byte16, byte16, ubyte*) pure @safe;
 
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.clflush")
