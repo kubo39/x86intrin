@@ -1,5 +1,16 @@
 import x86intrin;
 
+// void test_convert()
+// {
+//     byte16 x8 = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12, 13, -14, 15, -16];
+//     short8 x16 = [1, -2, 3, -4, 5, -6, 7, -8];
+//     int4 x32 = [1, -2, 3, -4];
+
+//     assert(_mm_cvtepi16_epi32(x16) == [1, -2, 3, -4]);
+//     assert(_mm_cvtepi16_epi64(x16) == [1, -2]);
+//     assert(_mm_cvtepi32_epi64(x32) == [1, -2]);
+// }
+
 void test_mm_testc_si128()
 {
     int4 x = [0x7, 0x7, 0x7, 0x7];
@@ -38,6 +49,7 @@ void test_mm_testz_si128()
 
 void main()
 {
+//    test_convert();
     test_mm_testc_si128();
     test_mm_testnzc_si128();
     test_mm_testz_si128();
