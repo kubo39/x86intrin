@@ -8,5 +8,5 @@
 		"x86intrin": { "version": "~master", "path": "../../" }
 	},
 	"copyright": "Copyright © 2018, Hiroki Noda",
-	"name": "strlen"
+	"name": "strlen.exe"
 }
