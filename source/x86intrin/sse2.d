@@ -12,13 +12,13 @@ pragma(LDC_intrinsic, "llvm.x86.sse2.pmadd.wd")
 int4 _mm_madd_epi16(byte16, byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.packsswb.128")
-byte16 _mm_packs_epi16(byte16, byte16) pure @safe;
+byte16 _mm_packs_epi16(short8, short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.packssdw.128")
-byte _mm_packs_epi32(int4, int4) pure @safe;
+short8 _mm_packs_epi32(int4, int4) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.packuswb.128")
-byte16 _mm_packus_epi16(byte16, byte16) pure @safe;
+byte16 _mm_packus_epi16(short8, short8) pure @safe;
 
 
 pragma(LDC_intrinsic, "llvm.x86.sse2.pmovmskb.128")
