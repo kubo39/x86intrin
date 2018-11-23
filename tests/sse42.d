@@ -1,5 +1,3 @@
-import core.simd;
-import ldc.simd;
 import x86intrin;
 
 void test_crc32()

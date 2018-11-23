@@ -2,6 +2,12 @@ module x86intrin;
 
 version(LDC):
 
+nothrow:
+@nogc:
+
+public import core.simd;
+public import ldc.simd;
+
 static if (__traits(targetHasFeature, "sse2"))
     public import x86intrin.sse2;
 static if (__traits(targetHasFeature, "sse3"))

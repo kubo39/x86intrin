@@ -1,5 +1,4 @@
-import core.simd;
-import x86intrin.sse3;
+import x86intrin;
 
 void test_lddqu()
 {

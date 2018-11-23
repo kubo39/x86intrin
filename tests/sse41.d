@@ -1,4 +1,3 @@
-import core.simd;
 import x86intrin;
 
 void test_testz_si128()
