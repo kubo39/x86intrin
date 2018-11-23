@@ -3,8 +3,6 @@
 # LDC = ldc2
 LDMD = ldmd2
 
-DFLAGS = DFLAGS="-mcpu=native"
-
 LINKFLAGS = \
 	 -I./source
 

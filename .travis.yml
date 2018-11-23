@@ -3,6 +3,9 @@ language: d
 d:
   - ldc
 
+env:
+  DFLAGS="-mcpu=native"
+
 script:
   - make test
 
