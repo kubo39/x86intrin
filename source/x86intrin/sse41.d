@@ -27,16 +27,16 @@ pragma(LDC_intrinsic, "llvm.x86.sse41.pmovsxbq")
 long2 _mm_cvtepi8_epi64(byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovsxbw")
-byte16 _mm_cvtepi8_epi16(byte16) pure @safe;
+short8 _mm_cvtepi8_epi16(byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovsxdq")
 long2 _mm_cvtepi32_epi64(int4) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovsxwd")
-int4 _mm_cvtepi16_epi32(byte16) pure @safe;
+int4 _mm_cvtepi16_epi32(short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovsxwq")
-long2 _mm_cvtepi16_epi64(byte16) pure @safe;
+long2 _mm_cvtepi16_epi64(short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovzxbd")
 int4 _mm_cvtepu8_epi32(byte16) pure @safe;
@@ -45,16 +45,16 @@ pragma(LDC_intrinsic, "llvm.x86.sse41.pmovzxbq")
 long2 _mm_cvtepu8_epi64(byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovzxbw")
-byte16 _mm_cvtepu8_epi16(byte16) pure @safe;
+short8 _mm_cvtepu8_epi16(byte16) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovzxdq")
 long2 _mm_cvtepu32_epi64(int4) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovzxwd")
-int4 _mm_cvtepu16_epi32(byte16) pure @safe;
+int4 _mm_cvtepu16_epi32(short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.pmovzxwq")
-long2 _mm_cvtepu16_epi64(byte16) pure @safe;
+long2 _mm_cvtepu16_epi64(short8) pure @safe;
 
 pragma(LDC_intrinsic, "llvm.x86.sse41.ptestc")
 int _mm_testc_si128(long2, long2) pure @safe;
