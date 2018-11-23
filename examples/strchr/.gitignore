@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+strchr.so
+strchr.dylib
+strchr.dll
+strchr.a
+strchr.lib
+strchr-test-*
+*.exe
+*.o
+*.obj
+*.lst

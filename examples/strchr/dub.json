@@ -1,0 +1,12 @@
+{
+	"description": "A minimal D application.",
+	"license": "BSL-1.0",
+	"authors": [
+		"Hiroki Noda"
+	],
+	"dependencies": {
+		"x86intrin": { "version": "~master", "path": "../../" }
+	},
+	"copyright": "Copyright © 2018, Hiroki Noda",
+	"name": "strchr.exe"
+}
