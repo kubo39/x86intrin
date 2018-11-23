@@ -12,3 +12,4 @@ x86intrin-test-*
 *.o
 *.obj
 *.lst
+out/
