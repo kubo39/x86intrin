@@ -11,9 +11,7 @@ import core.simd;
 import ldc.intrinsics;
 import ldc.simd;
 
-pragma(LDC_intrinsic, "llvm.x86.sse41.pblendvb")
-byte16 _mm(byte16, byte16, byte16) pure @safe;
-
+// pragma(LDC_intrinsic, "llvm.x86.sse41.pblendvb")
 // pragma(LDC_intrinsic, "llvm.x86.sse41.blendvpd")
 // pragma(LDC_intrinsic, "llvm.x86.sse41.blendvps")
 // pragma(LDC_intrinsic, "llvm.x86.sse41.round.ss")
