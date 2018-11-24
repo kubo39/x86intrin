@@ -31,9 +31,27 @@ void test_pack()
     assert(cast(ubyte16) _mm_packus_epi16(x16, y16) == [1, 2, 3, 4, 5, 6, 0xFF, 0xFF, 9, 10, 11, 12, 13, 14, 0xFF, 0xFF]);
 }
 
+void test_cmp_int()
+{
+    byte16 x8 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    byte16 y8 = [1, 3, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    short8 x16 = [1, 2, 3, 4, 5, 6, 7, 8];
+    short8 y16 = [1, 3, 1, 4, 5, 6, 7, 8];
+    int4 x32 = [1, 2, 3, 4];
+    int4 y32 = [1, 3, 1, 4];
+
+    assert(_mm_cmpeq_epi8(x8, y8) == [~0, 0, 0, ~0, ~0, ~0, ~0, ~0, ~0, ~0, ~0, ~0, ~0, ~0, ~0, ~0]);
+    assert(_mm_cmpgt_epi8(x8, y8) == [0, 0, ~0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    assert(_mm_cmpeq_epi16(x16, y16) == [~0, 0, 0, ~0, ~0, ~0, ~0, ~0]);
+    assert(_mm_cmpgt_epi16(x16, y16) == [0, 0, ~0, 0, 0, 0, 0, 0]);
+    assert(_mm_cmpeq_epi32(x32, y32) == [~0, 0, 0, ~0]);
+    assert(_mm_cmpgt_epi32(x32, y32) == [0, 0, ~0, 0]);
+}
+
 void main()
 {
     test_maskmoveu();
     test_sad();
     test_pack();
+    test_cmp_int();
 }

@@ -148,12 +148,12 @@ byte16 _mm_setzero_si128() pure
     return cast(byte16)( loadUnaligned!(int4)(result.ptr) );
 }
 
-byte16 _mm_cmpgt_epi8(byte16 a, byte16 b) pure
-{
-    return greaterMask!(byte16)(a, b);
-}
+alias _mm_cmpeq_epi8 = equalMask!byte16;
+alias _mm_cmpeq_epi16 = equalMask!short8;
+alias _mm_cmpeq_epi32 = equalMask!int4;
+alias _mm_cmpeq_epi64 = equalMask!long2;
 
-byte16 _mm_cmpeq_epi8(byte16 a, byte16 b) pure
-{
-    return equalMask!(byte16)(a, b);
-}
+alias _mm_cmpgt_epi8 = greaterMask!byte16;
+alias _mm_cmpgt_epi16 = greaterMask!short8;
+alias _mm_cmpgt_epi32 = greaterMask!int4;
+alias _mm_cmpgt_epi64 = greaterMask!long2;
