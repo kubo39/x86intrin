@@ -117,6 +117,11 @@ int4 _mm_setr_epi32(int i0, int i1, int i2, int i3) pure
     return loadUnaligned!(int4)(result.ptr);
 }
 
+byte16 _mm_add_epi8(byte16 a, byte16 b) pure
+{
+    return a + b;
+}
+
 int4 _mm_add_epi32(int4 a, int4 b) pure
 {
     return a + b;
