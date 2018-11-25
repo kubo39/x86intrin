@@ -7,3 +7,11 @@ x86 intrinsics for LDC
 ```console
 $ DFLAGS="-mcpu=native" dub build --compiler=ldc2
 ```
+
+## Test
+
+Unfortunately, LDC compiler cannot run the tests with `-mattr=+sse`
+
+```console
+$ DFLAGS="-mcpu=native" DC=ldmd2 make test
+```
