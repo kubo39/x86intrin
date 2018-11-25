@@ -33,26 +33,26 @@ immutable byte SIDD_BIT_MASK = 0x00;
 immutable byte SIDD_UNIT_MASK = 0x40;
 
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestrm128")
-byte16 _mm_cmpestrm(byte16, int, byte16, int, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestrm128")
+// byte16 _mm_cmpestrm(byte16, int, byte16, int, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestri128")
-int _mm_cmpestri(byte16, int, byte16, int, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestri128")
+// int _mm_cmpestri(byte16, int, byte16, int, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestria128")
-int _mm_cmpestra(byte16, int, byte16, int, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestria128")
+// int _mm_cmpestra(byte16, int, byte16, int, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestric128")
-int _mm_cmpestrc(byte16, int, byte16, int, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestric128")
+// int _mm_cmpestrc(byte16, int, byte16, int, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestrio128")
-int _mm_cmpestro(byte16, int, byte16, int, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestrio128")
+// int _mm_cmpestro(byte16, int, byte16, int, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestris128")
-int _mm_cmpestrs(byte16, int, byte16, int, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestris128")
+// int _mm_cmpestrs(byte16, int, byte16, int, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestriz128")
-int _mm_cmpestrz(byte16, int, byte16, int, ubyte) pure @safe;
+// pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestriz128")
+// int _mm_cmpestrz(byte16, int, byte16, int, ubyte) pure @safe;
 
 
 pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistrm128")
