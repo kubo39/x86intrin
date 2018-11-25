@@ -148,6 +148,11 @@ byte16 _mm_setzero_si128() pure
     return cast(byte16)( loadUnaligned!(int4)(result.ptr) );
 }
 
+int _mm_extract_epi16(int i)(short8 v) pure
+{
+    return extractelement!(short8, i)(v);
+}
+
 alias _mm_cmpeq_epi8 = equalMask!byte16;
 alias _mm_cmpeq_epi16 = equalMask!short8;
 alias _mm_cmpeq_epi32 = equalMask!int4;

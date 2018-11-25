@@ -48,10 +48,19 @@ void test_cmp_int()
     assert(_mm_cmpgt_epi32(x32, y32) == [0, 0, ~0, 0]);
 }
 
+void test_extract()
+{
+    short8 x = [1, 2, 3, 4, 5, 6, 7, 8];
+    assert(_mm_extract_epi16!(0)(x) == 1);
+    assert(_mm_extract_epi16!(1)(x) == 2);
+    assert(_mm_extract_epi16!(2)(x) == 3);
+}
+
 void main()
 {
     test_maskmoveu();
     test_sad();
     test_pack();
     test_cmp_int();
+    test_extract();
 }
