@@ -1,16 +1,23 @@
 module x86intrin.sse41;
 
-version(LDC):
-
-static assert (__traits(targetHasFeature, "sse4.1"));
+version(LDC)
+{
+    static assert (__traits(targetHasFeature, "sse4.1"));
+}
 
 nothrow:
 @nogc:
 
 import core.simd;
-import ldc.intrinsics;
-import ldc.simd;
 
+version(LDC)
+{
+    import ldc.intrinsics;
+    import ldc.simd;
+}
+
+version(LDC)
+{
 // pragma(LDC_intrinsic, "llvm.x86.sse41.pblendvb")
 // pragma(LDC_intrinsic, "llvm.x86.sse41.blendvpd")
 // pragma(LDC_intrinsic, "llvm.x86.sse41.blendvps")
@@ -56,11 +63,12 @@ import ldc.simd;
 // pragma(LDC_intrinsic, "llvm.x86.sse41.pmovzxwq")
 // long2 _mm_cvtepu16_epi64(short8) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse41.ptestc")
-int _mm_testc_si128(long2, long2) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse41.ptestc")
+        int _mm_testc_si128(long2, long2) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse41.ptestnzc")
-int _mm_testnzc_si128(long2, long2) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse41.ptestnzc")
+        int _mm_testnzc_si128(long2, long2) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse41.ptestz")
-int _mm_testz_si128(long2, long2) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse41.ptestz")
+        int _mm_testz_si128(long2, long2) pure @safe;
+}

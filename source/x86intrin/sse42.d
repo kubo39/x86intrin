@@ -1,15 +1,19 @@
 module x86intrin.sse42;
 
-version(LDC):
-
-static assert (__traits(targetHasFeature, "sse4.2"));
+version(LDC)
+{
+    static assert (__traits(targetHasFeature, "sse4.2"));
+}
 
 nothrow:
 @nogc:
 
 import core.simd;
-import ldc.intrinsics;
-import ldc.simd;
+version(LDC)
+{
+    import ldc.intrinsics;
+    import ldc.simd;
+}
 
 immutable int SIDD_UBYTE_OPS = 0x00;
 immutable int SIDD_UWORD_OPS = 0x01;
@@ -33,6 +37,8 @@ immutable byte SIDD_BIT_MASK = 0x00;
 immutable byte SIDD_UNIT_MASK = 0x40;
 
 
+version(LDC)
+{
 // pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpestrm128")
 // byte16 _mm_cmpestrm(byte16, int, byte16, int, ubyte) pure @safe;
 
@@ -55,26 +61,26 @@ immutable byte SIDD_UNIT_MASK = 0x40;
 // int _mm_cmpestrz(byte16, int, byte16, int, ubyte) pure @safe;
 
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistrm128")
-byte16 _mm_cmpistrm(byte16, byte16, ubyte) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistrm128")
+        byte16 _mm_cmpistrm(byte16, byte16, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistri128")
-int _mm_cmpistri(byte16, byte16, ubyte) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistri128")
+        int _mm_cmpistri(byte16, byte16, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistria128")
-int _mm_cmpistra(byte16, byte16, ubyte) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistria128")
+        int _mm_cmpistra(byte16, byte16, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistric128")
-int _mm_cmpistrc(byte16, byte16, ubyte) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistric128")
+        int _mm_cmpistrc(byte16, byte16, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistrio128")
-int _mm_cmpistro(byte16, byte16, ubyte) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistrio128")
+        int _mm_cmpistro(byte16, byte16, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistris128")
-int _mm_cmpistrs(byte16, byte16, ubyte) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistris128")
+        int _mm_cmpistrs(byte16, byte16, ubyte) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistriz128")
-int _mm_cmpistrz(byte16, byte16, ubyte) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.pcmpistriz128")
+        int _mm_cmpistrz(byte16, byte16, ubyte) pure @safe;
 
 
 // TODO?
@@ -87,8 +93,9 @@ int _mm_cmpistrz(byte16, byte16, ubyte) pure @safe;
 // pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.16")
 // ushort _mm_crc32_u16(ushort, ushort) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.32")
-uint _mm_crc32_u32(uint, uint) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.32.32")
+        uint _mm_crc32_u32(uint, uint) pure @safe;
 
-pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.64.64")
-ulong _mm_crc32_u64(ulong, ulong) pure @safe;
+    pragma(LDC_intrinsic, "llvm.x86.sse42.crc32.64.64")
+        ulong _mm_crc32_u64(ulong, ulong) pure @safe;
+}
