@@ -48,6 +48,12 @@ void test_cmp_int()
     assert(_mm_cmpgt_epi32(x32, y32) == [0, 0, ~0, 0]);
 }
 
+// void test_mm_set_int()
+// {
+//     byte16 zeros = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+//     assert(_mm_setzero_si128() == zeros);
+// }
+
 void test_extract()
 {
     short8 x = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -62,5 +68,6 @@ void main()
     test_sad();
     test_pack();
     test_cmp_int();
+    // test_mm_set_int();
     test_extract();
 }

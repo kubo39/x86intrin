@@ -150,11 +150,11 @@ byte16 _mm_or_si128(byte16 a, byte16 b) pure
 
 version(LDC)
 {
-    byte16 _mm_setzero_si128() pure
-    {
-        int[4] result = [0, 0, 0, 0];
-        return cast(byte16)( loadUnaligned!(int4)(result.ptr) );
-    }
+    // byte16 _mm_setzero_si128() pure
+    // {
+    //     int[4] result = [0, 0, 0, 0];
+    //     return cast(byte16)( loadUnaligned!(int4)(result.ptr) );
+    // }
 
     int _mm_extract_epi16(int i)(short8 v) pure
     {
