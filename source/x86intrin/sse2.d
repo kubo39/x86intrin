@@ -123,30 +123,30 @@ version(LDC)
 //     return loadUnaligned!(int4)(result.ptr);
 // }
 
-byte16 _mm_add_epi8(byte16 a, byte16 b) pure
-{
-    return a + b;
-}
+// byte16 _mm_add_epi8(byte16 a, byte16 b) //pure
+// {
+//     return a + b;
+// }
 
-int4 _mm_add_epi32(int4 a, int4 b) pure
-{
-    return a + b;
-}
+// int4 _mm_add_epi32(int4 a, int4 b) pure
+// {
+//     return a + b;
+// }
 
-byte16 _mm_and_si128(byte16 a, byte16 b) pure
-{
-    return a & b;
-}
+// byte16 _mm_and_si128(byte16 a, byte16 b) pure
+// {
+//     return a & b;
+// }
 
-byte16 _mm_andnot_si128(byte16 a, byte16 b) pure
-{
-    return (~a) & b;
-}
+// byte16 _mm_andnot_si128(byte16 a, byte16 b) pure
+// {
+//     return (~a) & b;
+// }
 
-byte16 _mm_or_si128(byte16 a, byte16 b) pure
-{
-    return a | b;
-}
+// byte16 _mm_or_si128(byte16 a, byte16 b) pure
+// {
+//     return a | b;
+// }
 
 version(LDC)
 {
@@ -155,6 +155,11 @@ version(LDC)
     //     int[4] result = [0, 0, 0, 0];
     //     return cast(byte16)( loadUnaligned!(int4)(result.ptr) );
     // }
+
+    int _mm_extract_epi8(int i)(byte16 v) pure
+    {
+        return extractelement!(byte16, i)(v);
+    }
 
     int _mm_extract_epi16(int i)(short8 v) pure
     {
