@@ -11,6 +11,8 @@ version(LDC)
 
 version(LDC)
 {
+static if (__traits(targetHasFeature, "sse"))
+    public import x86intrin.sse;
 static if (__traits(targetHasFeature, "sse2"))
     public import x86intrin.sse2;
 static if (__traits(targetHasFeature, "sse3"))
@@ -22,6 +24,7 @@ static if (__traits(targetHasFeature, "sse4.2"))
 }
 else
 {
+    public import x86intrin.sse;
     public import x86intrin.sse2;
     public import x86intrin.sse3;
     public import x86intrin.sse41;
