@@ -5,17 +5,17 @@ ubyte* strchrSSE42(ubyte* p, int c)
     int[4] im = [c & 0xff, c & 0xff, c & 0xff, c & 0xff];
     while (_mm_cmpistra(loadUnaligned!(byte16)(cast(byte*)im.ptr),
                         loadUnaligned!(byte16)(cast(byte*)p),
-                        cast(byte) 0x0))
+                        0x0))
     {
         p += 16;
     }
     if (_mm_cmpistrc(loadUnaligned!(byte16)(cast(byte*)im.ptr),
                      loadUnaligned!(byte16)(cast(byte*)p),
-                     cast(byte) 0x0))
+                     0x0))
     {
         return p + _mm_cmpistri(loadUnaligned!(byte16)(cast(byte*)im.ptr),
                                 loadUnaligned!(byte16)(cast(byte*)p),
-                                cast(byte) 0x0);
+                                0x0);
     }
     return null;
 }
