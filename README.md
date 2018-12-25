@@ -10,7 +10,7 @@ $ DFLAGS="-mcpu=native" dub build --compiler=ldc2
 
 ## Test
 
-Unfortunately, LDC compiler cannot run the tests with `-mattr=+sse`
+Unfortunately, LDC compiler cannot run unittest block with `-mattr=+sse`
 
 ```console
 $ DFLAGS="-mcpu=native" DC=ldmd2 make test
